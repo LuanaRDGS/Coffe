@@ -1,7 +1,12 @@
-import Image from "next/image";
+'use client'
+
+import { signIn } from "next-auth/react";
 
 export default function Home() {
-  return(
-    <h1>hello</h1>
-  )
+
+  return (
+    <main className="flex justify-center items-center h-screen">
+      <button className="btn btn-primary text-white" onClick={() => signIn ('name', {callbackUrl: "/dashboard"})}>Login</button>
+    </main>
+  );
 }
